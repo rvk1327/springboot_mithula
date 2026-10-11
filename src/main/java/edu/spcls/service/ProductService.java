@@ -31,4 +31,21 @@ public class ProductService {
 		p1.setPrice(p.getPrice());
 		return repo.save(p1);
 	}
+	
+	public Product getById(String pid) {		
+		return repo.findById(pid).get();
+	}
+	
+	
+	public List<Product> getProductByPrice(double price) {
+		return repo.findByPrice(price);
+	}
+	
+	public List<Product> getLessPriceProducts(double price) {
+		return repo.getProducts(price);
+	}
+	
+	
+	
+	
 }
